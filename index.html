@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Author: Thomas Neil 880899727 07/06/2022 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Application</title>
+
+</head>
+<body>
+
+    <div id="welcome">
+
+    <h1>Welcome to the Gelos Login System</h1>
+    <br>
+
+
+    </div>
+
+    <div id="login" hidden>
+
+        <form>
+
+            <h1>Login</h1>
+
+            <p>Username:</p>
+            <input type="text" name="username" placeholder="Username" id="loginuser"><br>
+            <p>Password:</p>
+            <input type="password" name="password" placeholder="Password" id="loginpass"><br><br>
+            
+            <button type="submit" id="loginsubmit">Submit</button>
+
+            <div id="loginaccess" hidden>
+                <p id="loginmessage" name="loginmessage">If you see this, there is an error.</p><br>
+                <button type="button"   id="showaccounts" onclick="showAccounts();">Show Accounts</button><br>
+                <p id="accountstitle" hidden><b>Username Password</b></p><br>
+                <p id="accountslist" name="accountslist"></p>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div id="register" hidden>
+
+        <h1>Registration</h1>
+
+        <p>Passwords must contain at least one number or symbol.</p>
+
+        <p>Username:</p>
+        <input type="text" name="username" placeholder="Username" id="reguser"><br>
+        <p>Password:</p>
+        <input type="password" name="password" placeholder="Password" id="regpass"><br><br>
+
+        <button type="button" id="showpassreg" onclick="togglePasswordVisibility();">Reveal/Hide Password</button><br>
+        <button type="submit" id="registersubmit">Submit</button>
+
+        <p><b>Password Generator:</b></p>
+        <p><small>Choose 1-3 components</small></p>
+
+        <form>
+            <input type="checkbox" id="genLetters" name="genLetters" value="Letters">
+            <label for="genLetters">Letters</label><br>
+            <input type="checkbox" id="genNumbers" name="genNumbers" value="Numbers">
+            <label for="genNumbers">Numbers</label><br>
+            <input type="checkbox" id="genSymbols" name="genSymbols" value="Symbols">
+            <label for="genSymbols">Symbols</label><br>
+            <input type="number" id="genLength" name="genLength" min="2" max="30" value="10">
+            <label for="genLength">Choose length of password</label><br>
+        </form>
+
+        <button type="button" id="generate" onclick="generatePassword();">Generate Random Password</button><br>
+        
+
+    </div>
+
+    <div>
+
+        <p>Use the button below to select the accounts file before attempting to login or register.</p>
+
+        <button id="fileselect">Choose Accounts File</button>
+
+    </div>
+
+    <div id="navigation">
+
+        <p>Please use the buttons below to navigate to the required sections, or press the key in brackets on the button.</p>
+        <br>
+        <button id="navwelcome" onclick="navWelcome();">(A) Go to Welcome Page</button>
+        <button id="navlogin" onclick="navLogin();">(B) Go to Login Page</button>
+        <button id="navregister" onclick="navRegister();">(C) Go to Registration Page</button>
+        <button id="navexit" onclick="navExit();">(E) Exit Application</button>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+</html>
